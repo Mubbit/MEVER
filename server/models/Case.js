@@ -44,17 +44,6 @@ const caseSchema = mongoose.Schema({
 }, { timestamps: true })
 
 
-/*
-caseSchema.index({ 
-    title:'text',
-    description: 'text',
-}, {
-    weights: {
-        name: 5,
-        description: 1,
-    }
-})
-*/
 
 const Case = mongoose.model('Case', caseSchema);
 module.exports = { Case }

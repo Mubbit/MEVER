@@ -35,7 +35,7 @@ function NavBar() {
           <Icon type="align-right" />
         </Button>
         <Drawer
-          title="Basic Drawer"
+          title="전체 메뉴"
           placement="right"
           className="menu_drawer"
           closable={false}

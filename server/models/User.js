@@ -24,7 +24,7 @@ const userSchema = mongoose.Schema({
     },
     role : {
         type:Number,
-        default: 0 
+        default: 1 
     },
     image: String,
     token : {
