@@ -4,6 +4,7 @@ import axios from "axios";
 import { Icon, Col, Row, Card } from 'antd';
 import CheckBox from './Sections/CheckBox';
 import { department } from './Sections/Datas';
+import SearchFeature from './Sections/SearchFeature';
 const { Meta } = Card;
 
 function LandingPage() {
@@ -15,6 +16,7 @@ function LandingPage() {
     const [Filters, setFilters] = useState({
         department: [] 
     })
+    const [SearchTerms, setSearchTerms] = useState("")
     
     useEffect(() => {
 
@@ -92,6 +94,21 @@ function LandingPage() {
         //setFilters(newFilters)
     }
 
+    
+    const updateSearchTerms = (newSearchTerm) => {
+
+        const body = {
+            skip: 0,
+            limit: Limit,
+            filters: Filters,
+            searchTerm: newSearchTerm
+        }
+        
+        setSkip(0)
+        setSearchTerms(newSearchTerm)
+        getCases(body)
+    }
+    
 
     return (
         <div style={{ width: '75%', margin: '3rem auto' }}>
@@ -110,6 +127,13 @@ function LandingPage() {
             <br/>
 
             {/* Search  */}
+            <div style={{display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}>
+                <SearchFeature
+                     refreshFunction={updateSearchTerms}
+                />
+            
+            </div>
+            <br/>            
 
             {/* Card  */}
 

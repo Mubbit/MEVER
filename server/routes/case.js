@@ -22,6 +22,7 @@ router.post("/cases", (req, res) => {
     
     let limit = req.body.limit ? parseInt(req.body.limit) : 8;
     let skip = req.body.skip ? parseInt(req.body.skip) : 0;
+    let term = req.body.searchTerm 
 
     let findArgs = {};
 
@@ -33,9 +34,11 @@ router.post("/cases", (req, res) => {
     }
     
     console.log('findArgs',findArgs)
-    
-    //db내의 모든 판례를 랜딩페이지에 가져오기
-    Case.find(findArgs)
+
+    if (term){
+        Case.find(findArgs)
+        .find({ "title" : { $regex: term } })
+        //.find({ $text: { $search: term }})
         .populate("writer")
         .skip(skip)
         .limit(limit)
@@ -47,6 +50,24 @@ router.post("/cases", (req, res) => {
                 postSize: caseInfo.length
             })
         })
+
+    } else {
+        Case.find(findArgs)
+        .populate("writer")
+        .skip(skip)
+        .limit(limit)
+        .exec((err, caseInfo) => {
+            if (err) return res.status(400).json({success:false, err})
+
+            return res.status(200).json({
+                success:true, caseInfo,
+                postSize: caseInfo.length
+            })
+        })
+    }
+    
+    //db내의 모든 판례를 랜딩페이지에 가져오기
+    
 
 });
 

@@ -43,7 +43,17 @@ const caseSchema = mongoose.Schema({
     }
 }, { timestamps: true })
 
-
+caseSchema.index({ //datanumber는 임의로 추가함.
+    title:'text',
+    description: 'text',
+    datanumber: 'text'
+}, {
+    weights: {
+        name: 5,
+        description: 1,
+        datanumber: 5
+    }
+})
 
 const Case = mongoose.model('Case', caseSchema);
 module.exports = { Case }
