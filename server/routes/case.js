@@ -65,10 +65,23 @@ router.post("/cases", (req, res) => {
             })
         })
     }
-    
-    //db내의 모든 판례를 랜딩페이지에 가져오기
-    
-
 });
+    
+    
+router.get("/cases_by_id", (req, res) => { 
+
+    let type = req.query.type
+    let caseId = req.query.id
+
+    // caseId를 이용해서 DB에서 caseId와 같은 판례의 정보를 가져온다.  
+    
+    Case.find({ _id: caseId })
+        .populate("writer")
+        .exec((err, case1) => {
+            if (err) return res.status(400).send(err)
+            return res.status(200).send({success: true, case1 })
+    })
+});
+
 
 module.exports = router;

@@ -62,13 +62,14 @@ function LandingPage() {
 
     
     const renderCards = Cases.map((case1, index)=>{
-       console.log('case',case1)
+       
        return <Col lg={8} md={16} xs={24} key={index}>
-            <Card>
-                <Meta
-                    title={case1.title}
-                    description={`${case1.casenumber}`}
-                />
+            <Card
+                cover={<a href={`/case/${case1._id}`}></a>}>
+                    <Meta
+                        title={case1.title}
+                        description={`${case1.casenumber}`}
+                    />
             </Card>
         </Col>
     })
