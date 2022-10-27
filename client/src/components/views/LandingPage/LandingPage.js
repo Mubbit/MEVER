@@ -5,7 +5,11 @@ import { Icon, Col, Row, Card } from 'antd';
 import CheckBox from './Sections/CheckBox';
 import { department } from './Sections/Datas';
 import SearchFeature from './Sections/SearchFeature';
+import { Link } from "react-router-dom";
+
+
 const { Meta } = Card;
+
 
 function LandingPage() {
 
@@ -64,13 +68,15 @@ function LandingPage() {
     const renderCards = Cases.map((case1, index)=>{
        
        return <Col lg={8} md={16} xs={24} key={index}>
-            <Card
-                cover={<a href={`/case/${case1._id}`}></a>}>
+            <Link to={`/case/${case1._id}`}>
+            <Card hoverable
+                 cover={<a href={`'/case/${case1._id}`}></a>}>
                     <Meta
                         title={case1.title}
                         description={`${case1.casenumber}`}
                     />
             </Card>
+            </Link>
         </Col>
     })
     
