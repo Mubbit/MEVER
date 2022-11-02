@@ -67,11 +67,11 @@ router.post("/cases", (req, res) => {
     }
 });
     
-    
+/*    
 router.get("/cases_by_id", (req, res) => { 
 
     let type = req.query.type
-    let caseId = req.query.id
+    let caseId = req.query.id 
 
     // caseId를 이용해서 DB에서 caseId와 같은 판례의 정보를 가져온다.  
     
@@ -82,6 +82,27 @@ router.get("/cases_by_id", (req, res) => {
             return res.status(200).send({success: true, case1 })
     })
 });
+*/
+
+
+//세부 페이지 주소 변경을 위한 테스트
+router.get("/cases_by_datanumber", (req, res) => { 
+
+    let type = req.query.type
+    let dataNumber = req.query.datanumber //query인지 body인지 잘 모르겠음.
+
+    // dataNumber를 이용해서 DB에서 dataNumber와 같은 판례의 정보를 가져온다.  
+    
+    Case.find({ datanumber: dataNumber })
+        .populate("writer")
+        .exec((err, case1) => {
+            if (err) return res.status(400).send(err)
+            return res.status(200).send({success: true, case1 })
+    })
+});
+
+
+
 
 
 module.exports = router;

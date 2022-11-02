@@ -4,22 +4,33 @@ import { Row, Col } from 'antd';
 import CaseInfo from './Sections/CaseInfo';
 
 
-
-/*
-import { useDispatch } from 'react-redux';
-function DetailProductPage(props) {
-    const dispatch = useDispatch();
-*/
-
 function DetailCasePage(props) {
 
     const caseId = props.match.params.caseId
+    
+    //페이지 수정을 위한 코드
+    const dataNumber = props.match.params.dataNumber
+
     const [Case, setCase] = useState({}) 
 
     
+    //dataNumber로 변환 위한 코드: /api/case/cases_by_datanumber?id=${dataNumber}&type=single
 
+    /*
     useEffect(() => {
         axios.get(`/api/case/cases_by_id?id=${caseId}&type=single`)
+            .then(response => {
+                if (response.data.success) {
+                    console.log("response data",response.data)
+                    setCase(response.data.case1[0])     
+                } else {
+                    alert("상세 정보 가져오기를 실패하였습니다.")
+                }
+            })
+    }, [])
+    */
+    useEffect(() => {
+        axios.get(`/api/case/cases_by_datanumber?datanumber=${dataNumber}&type=single`)
             .then(response => {
                 if (response.data.success) {
                     console.log("response data",response.data)
@@ -35,8 +46,6 @@ function DetailCasePage(props) {
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <h1>{Case.title}</h1>
             </div>
-
-            
 
             <br />
 

@@ -25,12 +25,14 @@ function App() {
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/case/upload" component={Auth(UploadCasePage, true)} />
-          <Route exact path="/case/:caseId" component={Auth(DetailCasePage, null)} />
+          <Route exact path="/case/:dataNumber" component={Auth(DetailCasePage, null)} /> 
         </Switch>
       </div>
       <Footer />
     </Suspense>
   );
 }
+
+// :dataNumber //  :caseId
 
 export default App;

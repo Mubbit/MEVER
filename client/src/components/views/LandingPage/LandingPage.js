@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaCode } from "react-icons/fa";
 import axios from "axios";
-import { Icon, Col, Row, Card } from 'antd';
+import { Icon, Col, Row, Card, Space, Typography  } from 'antd';
 import CheckBox from './Sections/CheckBox';
 import { department } from './Sections/Datas';
 import SearchFeature from './Sections/SearchFeature';
@@ -21,6 +21,14 @@ function LandingPage() {
         department: [] 
     })
     const [SearchTerms, setSearchTerms] = useState("")
+
+
+    //test를 위한 코드
+    const { Text } = Typography;
+    const testString ='이 문장에서 중요한 부분은 <highlight>ㅇㅇ</highlight> 입니다.';
+    
+ 
+
     
     useEffect(() => {
 
@@ -64,7 +72,7 @@ function LandingPage() {
 
     }
 
-    
+    /*
     const renderCards = Cases.map((case1, index)=>{
        
        return <Col lg={8} md={16} xs={24} key={index}>
@@ -79,6 +87,24 @@ function LandingPage() {
             </Link>
         </Col>
     })
+    */
+
+    
+    const renderCards = Cases.map((case1, index)=>{
+       
+       return <Col lg={8} md={16} xs={24} key={index}>
+            <Link to={`/case/${case1.datanumber}`}>
+            <Card hoverable
+                 cover={<a href={`'/case/${case1.datanumber}`}></a>}>
+                    <Meta
+                        title={case1.title}
+                        description={`${case1.datanumber}`}
+                    />
+            </Card>
+            </Link>
+        </Col>
+    })
+    
     
 
     const showFilteredResults = (filters) => {
@@ -123,6 +149,12 @@ function LandingPage() {
                 <h2> 찾고자 하는 판례가 있으신가요? <Icon type="book"/> </h2>
             </div> 
             <br/>
+
+            {/*테스트를 위한 코드 추가*/}
+            <div dangerouslySetInnerHTML={{__html: testString}}>
+                
+            </div>
+
 
             {/* Filter  */}
 
