@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
+//import { Link } from 'react-router-dom';
 import axios from 'axios'
-import { Row, Col } from 'antd';
+import { Row, Col, Button } from 'antd';
 import CaseInfo from './Sections/CaseInfo';
+
 
 
 function DetailCasePage(props) {
 
-    const caseId = props.match.params.caseId
+    //const caseId = props.match.params.caseId
     
     //페이지 수정을 위한 코드
     const dataNumber = props.match.params.dataNumber
@@ -29,6 +31,13 @@ function DetailCasePage(props) {
             })
     }, [])
     */
+
+
+    const recommendCaseHandler = () => {
+        window.location.href = `/case/123456`; //인자 넣기
+        // 예시 : `/case/${case1.datanumber}` 데이터 넘버 자리에 추천 링크가 담긴 인덱스가 들어가야함.
+    };
+
     useEffect(() => {
         axios.get(`/api/case/cases_by_datanumber?datanumber=${dataNumber}&type=single`)
             .then(response => {
@@ -63,6 +72,13 @@ function DetailCasePage(props) {
             <h3>{Case.summary}</h3>
     
             <br/>
+
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Button size="large" shape="round" type="primary" onClick={recommendCaseHandler}>
+                    추천 판례 이어보기
+                </Button>
+            </div>
+            <br />
             
 
         </div>
