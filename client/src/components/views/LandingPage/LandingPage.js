@@ -15,7 +15,7 @@ function LandingPage() {
 
     const [Cases, setCases] = useState([])
     const [Skip, setSkip] = useState(0)
-    const [Limit, setLimit] = useState(8)
+    const [Limit, setLimit] = useState(9)
     const [PostSize, setPostSize] = useState(0)
     const [Filters, setFilters] = useState({
         department: [] 
@@ -154,10 +154,8 @@ function LandingPage() {
             <br/>
 
             {/*테스트를 위한 코드 추가*/}
-            <div dangerouslySetInnerHTML={{__html: testString}}>
-                
-            </div>
-            <br/>
+            {/* <div dangerouslySetInnerHTML={{__html: testString}}></div> */}
+        
 
             {/* Search  */}
             <div style={{display: 'flex', justifyContent: 'center', margin: '1rem auto' }}>

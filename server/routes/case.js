@@ -20,7 +20,7 @@ router.post("/", (req, res) => {
 
 router.post("/cases", (req, res) => { 
     
-    let limit = req.body.limit ? parseInt(req.body.limit) : 8;
+    let limit = req.body.limit ? parseInt(req.body.limit) : 9;
     let skip = req.body.skip ? parseInt(req.body.skip) : 0;
     let term = req.body.searchTerm 
 
