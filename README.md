@@ -1,5 +1,4 @@
-Hello, My Friends  
-Thank you for having interest in this repository ! 
+판례 검색 및 학습 도우미 서비스 메버 MEVER의 프론트엔드, 백엔드 코드입니다.
 
 To use this application, 
 
