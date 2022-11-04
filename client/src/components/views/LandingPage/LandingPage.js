@@ -94,8 +94,10 @@ function LandingPage() {
        
        return <Col lg={8} md={16} xs={24} key={index}>
             <Link to={`/case/${case1.datanumber}`}>
-            <Card hoverable
-                 cover={<a href={`'/case/${case1.datanumber}`}></a>}>
+            <Card hoverable 
+                 cover={<a href={`'/case/${case1.datanumber}`}></a>}
+                 style={{border:'2px solid silver' ,borderRadius:"10px"}}
+                 >
                     <Meta
                         title={case1.title}
                         description={`${case1.datanumber}`}
@@ -147,6 +149,7 @@ function LandingPage() {
         <div style={{ width: '75%', margin: '3rem auto' }}>
             <div style={{ textAlign: 'center' }}>
                 <h2> 찾고자 하는 판례가 있으신가요? <Icon type="book"/> </h2>
+                <h3>아래의 검색창에 판례 제목이나 판례와 연관된 단어를 입력하시면 됩니다.</h3>
             </div> 
             <br/>
 
@@ -156,7 +159,14 @@ function LandingPage() {
             </div>
             <br/>
 
-            {/* Filter  */}
+            {/* Search  */}
+            <div style={{display: 'flex', justifyContent: 'center', margin: '1rem auto' }}>
+                <SearchFeature
+                     refreshFunction={updateSearchTerms}
+                />
+            </div>
+            <br/>            
+
 
             {/* CheckBox  */}
             <CheckBox 
@@ -164,15 +174,8 @@ function LandingPage() {
                 handleFilters={filters => handleFilters(filters, "department")}
             />
             <br/>
+            <br/>
 
-            {/* Search  */}
-            <div style={{display: 'flex', justifyContent: 'flex-end', margin: '1rem auto' }}>
-                <SearchFeature
-                     refreshFunction={updateSearchTerms}
-                />
-            
-            </div>
-            <br/>            
 
             {/* Card  */}
 

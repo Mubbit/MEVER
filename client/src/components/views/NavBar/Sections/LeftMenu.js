@@ -6,15 +6,18 @@ const MenuItemGroup = Menu.ItemGroup;
 function LeftMenu(props) {
   return (
     <Menu mode={props.mode}>
-    <Menu.Item key="mail">
-      <a href="/">처음으로</a>
-    </Menu.Item>
     
   </Menu>
   )
 }
 
 /*
+
+<Menu.Item key="mail">
+      <a href="/">처음으로</a>
+    </Menu.Item>
+    
+
 <SubMenu title={<span>판례 상세목록</span>}>
       <MenuItemGroup title="1단계 중요 단어">
         <Menu.Item key="setting:1">Option 1</Menu.Item>
