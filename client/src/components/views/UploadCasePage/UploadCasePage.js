@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Typography, Button, Form, message, Input, Icon } from 'antd';
+import { Typography, Button, Form, Input } from 'antd';
 import Axios from 'axios';
 
 const { Title } = Typography;
@@ -176,14 +176,6 @@ const submitHandler = (event) => {
         <br />
 
         <br />
-        <label>판례내용</label>
-        <TextArea
-            onChange={onDescriptionChange}
-            value={DescriptionValue}
-         />
-        <br />
-
-        <br />
         <label>판례일련번호</label>
         <Input
             onChange={onDatanumberChange}
@@ -201,5 +193,15 @@ const submitHandler = (event) => {
     </div>
   )
 }
+
+/*
+<br />
+        <label>판례내용</label>
+        <TextArea
+            onChange={onDescriptionChange}
+            value={DescriptionValue}
+         />
+        <br />
+*/
 
 export default UploadCasePage

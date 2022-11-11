@@ -40,7 +40,29 @@ const caseSchema = mongoose.Schema({
     views: {
         type: Number,
         default: 0
+    },
+
+    next_id: {
+        type: Number,
+        default: 0
+    },
+
+    summary_textrank: {
+        type: String
+    },
+
+    jmreference_textrank: {
+        type: String
+    },
+
+    kobart: {
+        type: String
+    },
+    _: {
+        type: String
     }
+
+
 }, { timestamps: true })
 
 caseSchema.index({ 

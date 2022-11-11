@@ -33,11 +33,11 @@ router.post("/cases", (req, res) => {
         }
     }
     
-    console.log('findArgs',findArgs)
+    //console.log('findArgs',findArgs)
 
     if (term){
         Case.find(findArgs)
-        .find({ "title" : { $regex: term } })
+        .find({ "_" : { $regex: term } }) //여기 인덱스를 뭐로 바꾸냐에 따라 검색하는게 달라짐
         //.find({ $text: { $search: term }})
         .populate("writer")
         .skip(skip)

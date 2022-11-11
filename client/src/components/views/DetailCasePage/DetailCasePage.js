@@ -34,7 +34,7 @@ function DetailCasePage(props) {
 
 
     const recommendCaseHandler = () => {
-        window.location.href = `/case/123456`; //인자 넣기
+        window.location.href = `/case/${Case.next_id}`; //인자 넣기
         // 예시 : `/case/${case1.datanumber}` 데이터 넘버 자리에 추천 링크가 담긴 인덱스가 들어가야함.
     };
 
@@ -70,6 +70,24 @@ function DetailCasePage(props) {
             <br/>
             <h2>판결요지</h2>
             <h3>{Case.summary}</h3>
+    
+            <br/> 
+      
+            <h2>판시사항(형광펜)</h2>
+            <div dangerouslySetInnerHTML={{__html: Case.jmreference_textrank}}>
+            </div>
+    
+            <br/>
+
+            
+            <h2>판례 요약(형광펜) </h2>
+            <div dangerouslySetInnerHTML={{__html: Case.summary_textrank}}>
+            </div>
+
+            <br/>
+
+            <h2>판례 요약 한문장</h2>
+            <h3>{Case.kobart}</h3>
     
             <br/>
 

@@ -100,7 +100,7 @@ function LandingPage() {
                  >
                     <Meta
                         title={case1.title}
-                        description={`${case1.datanumber}`}
+                        description={`${case1.kobart}`}
                     />
             </Card>
             </Link>
@@ -149,13 +149,23 @@ function LandingPage() {
         <div style={{ width: '75%', margin: '3rem auto' }}>
             <div style={{ textAlign: 'center' }}>
                 <h2> 찾고자 하는 판례가 있으신가요? <Icon type="book"/> </h2>
-                <h3>아래의 검색창에 판례 제목이나 판례와 연관된 단어를 입력하시면 됩니다.</h3>
             </div> 
             <br/>
 
             {/*테스트를 위한 코드 추가*/}
             {/* <div dangerouslySetInnerHTML={{__html: testString}}></div> */}
-        
+           
+
+        <div style={{ textAlign: 'center' }}>
+            <h3>
+                <Text mark>MEVER 이용 방법</Text><br/>
+                1. 아래의 검색창에 찾고 싶은 판례와 연관된 단어를 입력하시면 MEVER가 해당될만한 판례를 찾아드립니다.<br/>
+                2. 사건 종류에 따라 판례를 보고 싶으시다면, 아래의 박스에서 민사, 형사 등을 체크하면 됩니다.<br/>
+                3. 그 중 보고싶은 판례를 택하시면 판례 상세보기 페이지로 넘어가고, 판례의 내용이 나오고, 다음 연관 판례로 넘어갈 수 도 있습니다.
+            </h3>
+        </div>
+        <br/>
+
 
             {/* Search  */}
             <div style={{display: 'flex', justifyContent: 'center', margin: '1rem auto' }}>
@@ -163,7 +173,7 @@ function LandingPage() {
                      refreshFunction={updateSearchTerms}
                 />
             </div>
-            <br/>            
+            <br/>
 
 
             {/* CheckBox  */}
