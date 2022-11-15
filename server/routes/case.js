@@ -57,7 +57,7 @@ router.post("/cases", (req, res) => {
         .skip(skip)
         .limit(limit)
         .exec((err, caseInfo) => {
-            if (err) return res.status(400).json({success:false, err})
+            if (err) return res.status(400).json({success:false, err}) 
 
             return res.status(200).json({
                 success:true, caseInfo,

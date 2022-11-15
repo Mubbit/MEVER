@@ -19,8 +19,6 @@ function CaseInfo(props) {
             <Descriptions title="판례 상세정보" bordered >
                 <Descriptions.Item label="사건명"> {Case.title}</Descriptions.Item>
                 <Descriptions.Item label="사건번호">{Case.casenumber}</Descriptions.Item>
-                <Descriptions.Item label="참조조문"> {Case.jmreference}</Descriptions.Item>
-                <Descriptions.Item label="참조판례"> {Case.prreference}</Descriptions.Item>
                 <Descriptions.Item label="판례일련번호"> {Case.datanumber}</Descriptions.Item>            
             </Descriptions>
 

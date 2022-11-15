@@ -6,6 +6,7 @@ import CheckBox from './Sections/CheckBox';
 import { department } from './Sections/Datas';
 import SearchFeature from './Sections/SearchFeature';
 import { Link } from "react-router-dom";
+import LogoImage from './mever_logo_mini.png'
 
 
 const { Meta } = Card;
@@ -43,6 +44,9 @@ function LandingPage() {
         axios.post('/api/case/cases',body)
             .then(response =>{
                 if (response.data.success){
+                    
+                    console.log(response.data)
+
                     if(body.loadMore) {
                         setCases([...Cases,...response.data.caseInfo])
                     }
@@ -148,8 +152,12 @@ function LandingPage() {
     return (
         <div style={{ width: '75%', margin: '3rem auto' }}>
             <div style={{ textAlign: 'center' }}>
-                <h2> 찾고자 하는 판례가 있으신가요? <Icon type="book"/> </h2>
+                <h2> 찾고자 하는 판례가 있으신가요?</h2>
+                <a href="/"><img src={LogoImage} style={{width:100}} /></a>
             </div> 
+            
+        
+      
             <br/>
 
             {/*테스트를 위한 코드 추가*/}

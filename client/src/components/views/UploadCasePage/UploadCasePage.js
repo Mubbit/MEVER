@@ -70,7 +70,7 @@ const submitHandler = (event) => {
         event.preventDefault();
 
 
-        if (!TitleValue || !DescriptionValue || !CasenumberValue || !SummaryValue || !DatanumberValue || !HoldingValue || !JmreferenceValue || !PrreferenceValue ||
+        if (!TitleValue || !CasenumberValue || !SummaryValue || !DatanumberValue || !HoldingValue || !JmreferenceValue || !PrreferenceValue ||
             !DepartmentValue ) {
             return alert('모든 값을 넣어주셔야 합니다.')
         }
@@ -79,7 +79,6 @@ const submitHandler = (event) => {
         const body = {
             writer: props.user.userData._id,
             title: TitleValue,
-            description: DescriptionValue,
             casenumber: CasenumberValue,
             holding: HoldingValue,
             summary: SummaryValue,

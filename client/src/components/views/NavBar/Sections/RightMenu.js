@@ -23,7 +23,6 @@ function RightMenu(props) {
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="mail">
-          <Icon type="EditTwoTone"/>
           <a href="/login">로그인</a>
         </Menu.Item>
         <Menu.Item key="app">

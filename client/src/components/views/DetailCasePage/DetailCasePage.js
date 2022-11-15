@@ -64,32 +64,35 @@ function DetailCasePage(props) {
                 </Col>
             </Row>
 
-            <h2>판시사항</h2>
-            <h3>{Case.holding}</h3>
-
-            <br/>
-            <h2>판결요지</h2>
-            <h3>{Case.summary}</h3>
-    
-            <br/> 
-      
-            <h2>판시사항(형광펜)</h2>
-            <div dangerouslySetInnerHTML={{__html: Case.jmreference_textrank}}>
-            </div>
-    
+            <h2>참조조문</h2>
+            <h3>{Case.jmreference}</h3>
             <br/>
 
-            
-            <h2>판례 요약(형광펜) </h2>
-            <div dangerouslySetInnerHTML={{__html: Case.summary_textrank}}>
-            </div>
 
+            <h2>참조판례</h2>
+            <h3>{Case.prreference}</h3>
             <br/>
 
             <h2>판례 요약 한문장</h2>
             <h3>{Case.kobart}</h3>
     
             <br/>
+
+
+            <h2>판시사항(형광펜)</h2>
+            <h3><div dangerouslySetInnerHTML={{__html: Case.jmreference_textrank}}>
+            </div></h3>
+    
+            <br/>
+
+            
+            <h2>판례 요약(형광펜) </h2>
+            <h3><div dangerouslySetInnerHTML={{__html: Case.summary_textrank}}>
+            </div></h3>
+
+            <br/>
+
+            
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <Button size="large" shape="round" type="primary" onClick={recommendCaseHandler}>
@@ -107,5 +110,18 @@ function DetailCasePage(props) {
 //판시사항 = Holding , 판결요지 = Summary , 
 //참조조문 = Jmreference, 참조판례 = Prreference, 판례내용 = Description , 판례일련번호 = Datanumber
 //사건대상(사건종류명) = Department
+
+/*
+
+            <h2>판시사항</h2>
+            <h3>{Case.holding}</h3>
+
+            <br/>
+            <h2>판결요지</h2>
+            <h3>{Case.summary}</h3>
+    
+            <br/> 
+      
+*/
 
 export default DetailCasePage
