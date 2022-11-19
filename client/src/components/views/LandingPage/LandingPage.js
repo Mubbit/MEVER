@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FaCode } from "react-icons/fa";
 import axios from "axios";
-import { Icon, Col, Row, Card, Space, Typography  } from 'antd';
+import { Icon, Col, Row, Card, Space, Typography } from 'antd';
 import CheckBox from './Sections/CheckBox';
 import { department } from './Sections/Datas';
 import SearchFeature from './Sections/SearchFeature';
@@ -98,15 +98,18 @@ function LandingPage() {
        
        return <Col lg={8} md={16} xs={24} key={index}>
             <Link to={`/case/${case1.datanumber}`}>
-            <Card hoverable 
-                 cover={<a href={`'/case/${case1.datanumber}`}></a>}
-                 style={{border:'2px solid silver' ,borderRadius:"10px"}}
-                 >
-                    <Meta
-                        title={case1.title}
-                        description={`${case1.kobart}`}
-                    />
-            </Card>
+                
+                    <Card 
+                        hoverable 
+                        cover={<a href={`'/case/${case1.datanumber}`}></a>}
+                        style={{border:'2px solid silver' ,borderRadius:"10px", height:'100%'}}
+                        >
+                            <Meta
+                                title={case1.title}
+                                description={`${case1.kobart}`}
+                            />
+                    </Card>
+                
             </Link>
         </Col>
     })
@@ -195,10 +198,12 @@ function LandingPage() {
 
             {/* Card  */}
 
-            <Row gutter={[16,16]}>
+            <Row gutter={[16,16]} type="flex">
+            
                 {renderCards}
+            
             </Row>
-
+            
             <br/>
         
             {/* 아래 부등호는 >로도 바꿀 수 있으니 참고 */}

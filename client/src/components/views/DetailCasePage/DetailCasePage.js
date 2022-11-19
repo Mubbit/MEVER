@@ -79,14 +79,14 @@ function DetailCasePage(props) {
             <br/>
 
 
-            <h2>판시사항(형광펜)</h2>
+            <h2>판시사항(하이라이트)</h2>
             <h3><div dangerouslySetInnerHTML={{__html: Case.jmreference_textrank}}>
             </div></h3>
     
             <br/>
 
             
-            <h2>판례 요약(형광펜) </h2>
+            <h2>판례 요약(하이라이트) </h2>
             <h3><div dangerouslySetInnerHTML={{__html: Case.summary_textrank}}>
             </div></h3>
 
