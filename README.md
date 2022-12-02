@@ -1,8 +1,5 @@
-판례 검색 및 학습 도우미 서비스 메버 MEVER의 프론트엔드, 백엔드 코드입니다.
+비법조인을 위한 판례 조회 서비스 메버 MEVER의 프론트엔드, 백엔드 코드입니다.
 
-To use this application, 
+서비스는 유연한 검색 기능, 주요 단어 하이라이트 기능, 검색한 판례와 연관된 판례를 추천하는 기능 3가지로 구성되어 있습니다.
+구현은 프론트엔드 - ReactJS / 백엔드 - Node.js로 구현하였습니다.
 
-1. make dev.js file inside config folder 
-2. put mongoDB info into dev.js file 
-3. Type  " npm install " inside the root directory  ( Download Server Dependencies ) 
-4. Type " npm install " inside the client directory ( Download Front-end Dependencies )
